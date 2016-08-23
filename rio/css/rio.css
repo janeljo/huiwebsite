@@ -1,0 +1,41 @@
+.row {
+  margin: 0;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color:	#cccccc;
+  height: 1.5px;
+}
+
+.header p {
+  font-family: 'Vollkorn', serif;
+  font-size: 27px;
+  font-weight: bolder;
+  padding-top: 10px;
+}
+
+.header img {
+  width: 150px;
+}
+
+.description p, .description ul {
+  font-family: 'Vollkorn', serif;
+  font-size: 20px;
+  padding-left: 35px;
+}
+
+.img-col img {
+  width: 230px;
+  margin-bottom: 15px;
+}

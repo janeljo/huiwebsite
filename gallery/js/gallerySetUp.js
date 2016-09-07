@@ -1,4 +1,4 @@
-var id = 0;
+var sectionCounter = 0;
 
 function initialize() {
 
@@ -8,15 +8,10 @@ function initialize() {
   }
   $("#gallery").html(html);
 
+  loadSection($("#0").prev());
+
   $(".header").click(function() {
-    var header = $(this);
-    var id = header.next().attr("id");
-    if (isLoadedAndShowing(id)) {
-      hideImage(id);
-    } else {
-      loadImages(id);
-    }
-    updateCollapseGlyphicon(header);
+    loadSection($(this));
   });
 
   $("#left").click(function() {
@@ -28,6 +23,17 @@ function initialize() {
   });
 }
 
+function loadSection(section) {
+  var header = section;
+  var sectionId = header.next().attr("id");
+  if (isLoadedAndShowing(sectionId)) {
+    hideImage(sectionId);
+  } else {
+    loadImages(sectionId);
+  }
+  updateCollapseGlyphicon(header);
+}
+
 
 function getSectionTemplate(sectionName) {
   var html =
@@ -36,54 +42,54 @@ function getSectionTemplate(sectionName) {
        <div class="header">\
          <p>' + sectionName + ' <span class="glyphicon glyphicon-collapse-down"></p>\
        </div>\
-       <div class="content" id="' + id + '">\
+       <div class="content" id="' + sectionCounter + '">\
        </div>\
      </div>\
    </div>';
-   id ++;
+   sectionCounter ++;
    return html;
 }
 
-function loadImages(id) {
-  if (!containsImages(id)) {
-    insertImage(id);
+function loadImages(sectionId) {
+  if (!containsImages(sectionId)) {
+    insertImage(sectionId);
   } else {
-    showImage(id);
+    showImage(sectionId);
   }
 }
 
-function insertImage(id) {
+function insertImage(sectionId) {
   var html = ""
-  var pictures = sectionData[id].pictures;
+  var pictures = sectionData[sectionId].pictures;
   for (var i = 0; i < pictures.length; i++) {
     html = html.concat('<img src="' + pictures[i] + '" order="' + i + '"/>');
   }
-  $("#" + id).html(html);
+  $("#" + sectionId).html(html);
 
-  $(".content img").click(function() {
-    newImageForModal(id, $(this).attr("order"));
+  $("#" + sectionId + " img").click(function() {
+    newImageForModal(sectionId, $(this).attr("order"));
     $("#pic-modal").modal("show");
   });
 }
 
-function hideImage(id) {
-  $("#" + id).css("display", "none");
+function hideImage(sectionId) {
+  $("#" + sectionId).css("display", "none");
 }
 
-function showImage(id) {
-  $("#" + id).css("display", "block");
+function showImage(sectionId) {
+  $("#" + sectionId).css("display", "block");
 }
 
-function containsImages(id) {
-  return $("#" + id).html().trim() != "";
+function containsImages(sectionId) {
+  return $("#" + sectionId).html().trim() != "";
 }
 
-function isLoadedAndShowing(id) {
-  return containsImages(id) && $("#" + id).css("display") == "block";
+function isLoadedAndShowing(sectionId) {
+  return containsImages(sectionId) && $("#" + sectionId).css("display") == "block";
 }
 
-function newImageForModal(id, order) {
-  var picArray = sectionData[id].pictures;
+function newImageForModal(sectionId, order) {
+  var picArray = sectionData[sectionId].pictures;
   var imgSrc = picArray[order];
   $("#modal-pic").attr("src", imgSrc);
   $("#modal-pic").attr("order", order);
@@ -104,9 +110,9 @@ function newImageForModal(id, order) {
 function switchToNeighborImage(direction) {
   var order = parseInt($("#modal-pic").attr("order"));
   var nextOrder = order + direction;
-  var id = findID(order, $("#modal-pic").attr("src"));
-  if (nextOrder >= 0 && nextOrder <= sectionData[id].pictures.length - 1) {
-    newImageForModal(id, nextOrder);
+  var sectionId = findID(order, $("#modal-pic").attr("src"));
+  if (nextOrder >= 0 && nextOrder <= sectionData[sectionId].pictures.length - 1) {
+    newImageForModal(sectionId, nextOrder);
   }
 }
 

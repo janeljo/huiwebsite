@@ -1,3 +1,10 @@
+.title {
+  margin: auto;
+  text-align: center;
+  font-family: 'Vollkorn', serif;
+  font-size: 25px;
+  font-weight: bold;
+}
 
 .row {
   margin: 0;

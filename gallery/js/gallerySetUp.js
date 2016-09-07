@@ -62,7 +62,7 @@ function insertImage(sectionId) {
   var html = ""
   var pictures = sectionData[sectionId].pictures;
   for (var i = 0; i < pictures.length; i++) {
-    html = html.concat('<img src="' + pictures[i] + '" order="' + i + '"/>');
+    html = html.concat('<img src="' + pictures[i].src + '" order="' + i + '"/>');
   }
   $("#" + sectionId).html(html);
 
@@ -90,9 +90,12 @@ function isLoadedAndShowing(sectionId) {
 
 function newImageForModal(sectionId, order) {
   var picArray = sectionData[sectionId].pictures;
-  var imgSrc = picArray[order];
+  var imgSrc = picArray[order].src;
+  var imgCaption = picArray[order].caption;
+
   $("#modal-pic").attr("src", imgSrc);
   $("#modal-pic").attr("order", order);
+  $("#picture-caption").text(imgCaption);
 
   if (order == 0) {
     $("#left").css("color", "#a6a6a6");
@@ -114,6 +117,7 @@ function switchToNeighborImage(direction) {
   if (nextOrder >= 0 && nextOrder <= sectionData[sectionId].pictures.length - 1) {
     newImageForModal(sectionId, nextOrder);
   }
+  $('.modal:visible').each(reposition);
 }
 
 function updateCollapseGlyphicon(object) {
@@ -123,7 +127,7 @@ function updateCollapseGlyphicon(object) {
 
 function findID(order, src) {
   for (var i = 0; i < sectionData.length; i++) {
-    if (sectionData[i].pictures[order] == src) {
+    if (sectionData[i].pictures[order].src == src) {
       return i;
     }
   }

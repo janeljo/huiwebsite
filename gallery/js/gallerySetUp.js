@@ -1,53 +1,64 @@
-var sectionCounter = 0;
-
 function initialize() {
+  constructBasicSections();
+  loadImages(0);
+  registerClickEvents();
+}
 
+function constructBasicSections() {
   var html = "";
   for (var i = 0; i < sectionData.length; i++) {
-    html = html.concat(getSectionTemplate(sectionData[i].sectionName));
+    html = html.concat(getSectionTemplate(sectionData[i].sectionName, i));
   }
   $("#gallery").html(html);
-
-  loadSection($("#0").prev());
-
-  $(".header").click(function() {
-    loadSection($(this));
-  });
-
-  $("#left").click(function() {
-    switchToNeighborImage(-1);
-  });
-
-  $("#right").click(function() {
-    switchToNeighborImage(1);
-  });
 }
 
-function loadSection(section) {
-  var header = section;
-  var sectionId = header.next().attr("id");
-  if (isLoadedAndShowing(sectionId)) {
-    hideImage(sectionId);
-  } else {
-    loadImages(sectionId);
-  }
-  updateCollapseGlyphicon(header);
-}
-
-
-function getSectionTemplate(sectionName) {
+function getSectionTemplate(sectionName, id) {
   var html =
    '<div class="row row-eq-height">\
      <div class="col-sm-12">\
        <div class="header">\
          <p>' + sectionName + ' <span class="glyphicon glyphicon-collapse-down"></p>\
        </div>\
-       <div class="content" id="' + sectionCounter + '">\
+       <div class="content" id="' + id + '">\
        </div>\
      </div>\
    </div>';
-   sectionCounter ++;
    return html;
+}
+
+function registerClickEvents() {
+  $(".header").click(function() {
+    sectionRespondToClick($(this));
+  });
+
+  const GO_LEFT = -1
+  const GO_RIGHT = 1
+  $("#left").click(function() {
+    switchToNeighborImage(GO_LEFT);
+  });
+
+  $("#right").click(function() {
+    switchToNeighborImage(GO_RIGHT);
+  });
+
+}
+
+function sectionRespondToClick(section) {
+  var sectionId = section.next().attr("id");
+  if (isLoadedAndShowing(sectionId)) {
+    hideImage(sectionId);
+  } else {
+    loadImages(sectionId);
+  }
+  updateCollapseGlyphicon(section);
+}
+
+function isLoadedAndShowing(sectionId) {
+  return containsImages(sectionId) && $("#" + sectionId).css("display") == "block";
+}
+
+function hideImage(sectionId) {
+  $("#" + sectionId).css("display", "none");
 }
 
 function loadImages(sectionId) {
@@ -58,35 +69,29 @@ function loadImages(sectionId) {
   }
 }
 
+function containsImages(sectionId) {
+  return $("#" + sectionId).html().trim() != "";
+}
+
 function insertImage(sectionId) {
   var html = ""
   var pictures = sectionData[sectionId].pictures;
   for (var i = 0; i < pictures.length; i++) {
     html = html.concat('<img src="' + pictures[i].src + '" order="' + i + '"/>');
   }
-  $("#" + sectionId).html(html);
+  var section = "#" + sectionId;
+  $(section).html(html);
 
-  $("#" + sectionId + " img").click(function() {
-    newImageForModal(sectionId, $(this).attr("order"));
+  $(section + " img").click(function() {
     $("#pic-modal").modal("show");
+    newImageForModal(sectionId, $(this).attr("order"));
   });
-}
-
-function hideImage(sectionId) {
-  $("#" + sectionId).css("display", "none");
 }
 
 function showImage(sectionId) {
   $("#" + sectionId).css("display", "block");
 }
 
-function containsImages(sectionId) {
-  return $("#" + sectionId).html().trim() != "";
-}
-
-function isLoadedAndShowing(sectionId) {
-  return containsImages(sectionId) && $("#" + sectionId).css("display") == "block";
-}
 
 function newImageForModal(sectionId, order) {
   var picArray = sectionData[sectionId].pictures;
@@ -108,6 +113,8 @@ function newImageForModal(sectionId, order) {
   } else {
     $("#right").css("color", "black");
   }
+
+  $('.modal:visible').each(reposition);
 }
 
 function switchToNeighborImage(direction) {
@@ -117,7 +124,18 @@ function switchToNeighborImage(direction) {
   if (nextOrder >= 0 && nextOrder <= sectionData[sectionId].pictures.length - 1) {
     newImageForModal(sectionId, nextOrder);
   }
-  $('.modal:visible').each(reposition);
+}
+
+function findID(order, src) {
+  for (var i = 0; i < sectionData.length; i++) {
+    var pictures = sectionData[i].pictures;
+    if (pictures.length > order) {
+      if (pictures[order].src == src) {
+        return i;
+      }
+    }
+  }
+  return -1;
 }
 
 function updateCollapseGlyphicon(object) {
@@ -125,11 +143,9 @@ function updateCollapseGlyphicon(object) {
   object.find("span").toggleClass("glyphicon-collapse-up");
 }
 
-function findID(order, src) {
-  for (var i = 0; i < sectionData.length; i++) {
-    if (sectionData[i].pictures[order].src == src) {
-      return i;
-    }
-  }
-  return -1;
+function reposition() {
+  var modal = $(this),
+       dialog = $('.modal-dialog');
+  modal.css('display', 'block');
+  dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
 }

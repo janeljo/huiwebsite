@@ -1,6 +1,6 @@
 function initialize() {
   constructBasicSections();
-  loadImages(0);
+  loadFirstSection();
   registerClickEvents();
 }
 
@@ -24,6 +24,11 @@ function getSectionTemplate(sectionName, id) {
      </div>\
    </div>';
    return html;
+}
+
+function loadFirstSection() {
+  loadImages(0);
+  updateCollapseGlyphicon($("#0").prev());
 }
 
 function registerClickEvents() {

@@ -76,3 +76,11 @@
 ::-webkit-scrollbar-button:horizontal:decrement:hover {
    /* Select the down or left scroll button when it's being hovered by the mouse */
 }
+
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

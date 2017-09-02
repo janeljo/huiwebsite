@@ -1,8 +1,8 @@
 .title {
   margin: auto;
   text-align: center;
-  font-family: 'Vollkorn', serif;
-  font-size: 25px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 50px;
   font-weight: bold;
 }
 
@@ -17,18 +17,38 @@
   display:         flex;
 }
 
+.content {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.section {
+  overflow: auto;
+}
+
+.section h1 {
+  font-size: 50px;
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 4px;
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
+}
+
 .nametags img {
-  width: 120%;
-  z-index: 20;
-  position: relative;
-  margin-left: -14.395px;
+  float: left;
+  max-width: 25%;
+  margin-left: 150px;
 }
 
 .nametags p {
   margin: 0;
   text-align: center;
-  font-family: 'Vollkorn', serif;
-  font-size: 17.5px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
   font-weight: bold;
   white-space: nowrap;
   position: relative;

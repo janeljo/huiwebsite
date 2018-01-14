@@ -76,22 +76,11 @@
 
           <div class="mySlides fade">
             <div class="numbertext">3 / 3 </div>
-            <img src="images/slideshow/Krissy.jpg">  <!-- SIZE:  760 x 340 -->
+            <img src="images/slideshow/Emily.jpg">  <!-- SIZE:  760 x 340 -->
             <div class="text"></div>   <!-- caption -->
           </div>
 
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
         </div>
-
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-
-
       </div>
     </div>
     <div class="row row-eq-height" id="last-row">
@@ -174,81 +163,47 @@
 
 
 <script>
-
   var isIpad = ipadAdjustment(fixPMSection, removeSlideShow, scaleImages, insertLineBreaks, iPadPictureSubstitution);
   var isMobile = mobileAdjustment(fixPMSection, removeSlideShow);
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
   if (!isIpad && !isMobile){
     var slideIndex = 0;
     showSlides();
   }
-
   function removeSlideShow() {
-     $(".slideshow-container").html("");           // take out slide show for small screens
-     console.log("removed!")
+    $(".slideshow-container").html("");           // take out slide show for small screens
+    console.log("removed!")
   }
-
   function fixPMSection() {
     var mentorImg = $("#pmgroup-img-block").html();
     var mentorHtml = $("#mentor-section").html();
     $("#mentor-section").html(mentorHtml.replace(mentorImg, ""));
     $("#mentor-section").html("<div id='pmgroup-img-block'>" + mentorImg + "</div>" +  $("#mentor-section").html());
-
     $("#pmgroup-img-block").css("float", "none");
     $("#pmgroup-img-block").css("padding-bottom", "10px");
     $("#pmgroup-img").css("display", "block");
     $("#pmgroup-img").css("margin", "auto");
-  }
-
+      }
   function insertLineBreaks() {
     $( "<br><br><br><br>" ).insertAfter( "#last-row" );
   }
-
   function scaleImages() {
     $("#ymca-img").css("height", "70px");
     $("#hui-img").css("height", "120px");
   }
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
+  function showSlides() {
     var i;
     var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-      slideIndex = 1
-    }
-    if (n < 1) {
-      slideIndex = slides.length
-    }
     for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+      slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1
-    }
+    if (slideIndex> slides.length) {slideIndex = 1}
     slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 5000); // Change image every 3 seconds
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
   }
-
   function iPadPictureSubstitution() {
     $(".slideshow-container").html("<img src='images/slideshow/ipad_pic.jpg' />");
   }
-
 </script>
 
 </body>

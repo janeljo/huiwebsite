@@ -41,6 +41,7 @@ function adjustLayout() {
   $(".col-sm-6").css("margin-left", "0");
   $(".col-sm-8").css("margin-left", "0");
   $("#menu a").css("margin-left", "0");         // takes out "padding" for menu
+  $("#hide").css("display", "none");            // removes bottom center hexagon for Contact page
 }
 
 function removeFooter() {

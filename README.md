@@ -1,3 +1,7 @@
+Members (2020-2021)
+-------------------
+* Timothy Huo
+
 Members (2019-2020)
 -------------------
 * Khanh Nguyen

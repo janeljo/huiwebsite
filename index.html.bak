@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<title> OMSS HUI </title>
+<meta name="description" content="UH Manoa Office of Multicultural Student Services Hawaiʻi Undergraduate Initiative">
+<meta name="keywords" content="OMSS,HUI,OMSS HUI,Gear Up, Hawaiʻi Undergraduate Initiative, office of multicultural student services">
+<meta name="author" content="Man Chon Kuok">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="common/js/jquery.min.js"></script>
+<link rel="stylesheet" href="common/css/bootstrap.min.css">
+<script src="common/js/bootstrap.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>  <!--font for content text -->
+<link href='common/css/navbar.css' rel='stylesheet' type='text/css'>
+<link href='css/slideshow.css' rel='stylesheet' type='text/css'>
+<link href='css/index.css' rel='stylesheet' type='text/css'>
+<script src="common/js/screenAdjustment.js" type="text/javascript"></script>
+
+
+<body>
+  <div class="container">
+
+    <nav class="navbar navbar-default">
+      <div class="banner">
+        <div class="banner_img site_name">
+          <div id="web-title">
+            <h3>Office of Multicultural Student Services</h3>
+            <h1>Hawaiʻi Undergraduate Initiative</h1>
+          </div>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav nav-pills nav-justified" id="menu">
+          <li class="active"><a href="" style="margin-left: 0px">Home</a></li>
+          <li><a href="program/">Program Detail</a></li>
+          <li><a href="rio/">HUI RIO</a></li>
+          <li><a href="gallery/">Gallery</a></li>
+          <li><a href="resources/">Resources</a></li>
+          <li><a href="contact/" style="margin-right: 0px">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="row row-eq-height">
+      <div class="col-sm-4" style="margin-left: 0">
+        <div class="header">
+          <p> About Us </p>
+        </div>
+        <div class="content" style="height: 295px; overflow: auto; padding-right: 5px">
+          <p>
+            <img id="hui-img" src="images/logo.png" style="height: 170px; float: right" />
+            Hawaii Undergraduate Initiative (HUI) is a summer leadership program providing a free 3-credit summer college course for a select group of incoming freshmen at the University of Hawaii at Manoa. In addition to the summer course, HUI offers engaging and insightful workshops on using university resources, exploring academics/careers and developing writing/math skills. All HUI participating scholars will be paired with a Peer Mentor who will support and assist them in their transition from high school to college.
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-8">
+
+         <iframe height="100%" width="100%" src="https://www.youtube.com/embed/qVhQ-VMiY_k?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="slideshow-container">
+<!--
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3 </div>
+            <img src="images/slideshow/banner.jpg">   SIZE:  760 x 340
+            <div class="text"></div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3 </div>
+            <img src="images/slideshow/group.jpg">
+            <div class="text"></div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3 </div>
+            <img src="images/slideshow/Emily.jpg">
+            <div class="text"></div>
+          </div>
+-->
+        </div>
+      </div>
+    </div>
+    <div class="row row-eq-height" id="last-row">
+      <div class="col-sm-3" style="margin-left: 0">
+        <div class="header">
+          <p> <b> 2021 Application Out Now!!! </b> </p>
+        </div>
+        <div class="content">
+          <!--
+          <p>
+            Donate to the Hawaiʻi Undergraduate Initiative (HUI) program so that we can continue our legacy of assisting our future leaders in our communities.
+          </p>
+        -->
+        <p>
+        Here is the link to the online application form: <a href="https://forms.gle/z5cGMWjXpR9nKWFu5"> HUI Application 2021 </a>
+        <br>The deadline to submit the application form is Friday, April 23th, 2021 by 11:59 PM.
+		<br>
+		<br>
+		In addition, we will also be holding virtual sessions where you can learn more about the HUI program,
+		services, and activities available to you. To sign up, <a href="https://docs.google.com/forms/d/e/1FAIpQLSdK0ZCZbbIPMtuYVSNhnOe82UmJiG_ZP9atbqHRskdwEEHQ8Q/viewform?gxids=7628"> click here </a>
+		<br>
+		These sessions will be held on:
+		<br> Friday, March 12 from 4:30 - 5:30 pm
+		<br> Friday, March 26 from 4:30 - 5:30 pm
+		<br> Friday, April 9 from 4:30 - 5:30 pm
+		<!--Don't worry! The application will be released in January.
+		<br>
+		Check back later for the like to the application.
+		<br>
+		Hope to see you soon! -->
+		
+		
+
+		<br>
+        
+        </p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="header">
+          <p> Peer Mentors </p>
+        </div>
+        <div class="content" id="mentor-section">
+            <span id="pmgroup-img-block">
+              <img id="pmgroup-img" src="images/2017-peer-mentors.jpg" style="height: 175px"/>
+            </span>
+            <strong> Our Mentors are... </strong>
+          <ul>
+            <li> Knowledgeable guides for new students </li>
+            <li> Thoughtful facilitators who provide access to people and resources </li>
+            <li> Role models who encourage their mentees to strive for success </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="header">
+          <p> Connect With Us </p>
+        </div>
+        <div class="content">
+          <p>
+            <span style="float: right; width: 45px">
+              <a href="https://www.facebook.com/omsshui/" target="_blank"><img src="common/images/facebook-256.png" style="height: 45px"/></a>
+              <a href="https://www.instagram.com/omsshui/" target="_blank"><img src="common/images/instagram.png" style="height: 45px; margin-top: 10px"/></a>
+              <a href="https://www.youtube.com/channel/UCoSzZiWK2ts9ELgetLFq7Rw/videos?sort=dd&view=0&shelf_id=0" target="_blank"><img src="common/images/youtube.png" style="height: 45px; margin-top: 10px"/></a>
+            </span>
+            <strong>OMSS HUI</strong>
+            <br>
+            QLCSS Office 309
+            <br>
+            Tel: (707)390-0181
+            <br>
+            Email: omsshui@hawaii.edu
+         </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer" style="margin-left:-15px">
+      <nav class="navbar navbar-default container">
+        <div class="row row-eq-height footer-content">
+          <div class="col-sm-3">
+            <span class="align-helper"></span>
+            <img src="common/images/manoa_seal.png" style="height: 60px"/>
+          </div>
+          <div class="col-sm-6">
+            <p>
+              UH Manoa OMSS HUI
+              <br>
+              QLCSS Office 309
+              <br>
+              Tel: (707)390-0181
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <span class="align-helper"></span>
+            <a href="https://www.facebook.com/omsshui/" target="_blank"><img src="common/images/facebook-256.png" style="height: 45px"/></a>
+            <a href="https://www.instagram.com/omsshui/" target="_blank"><img src="common/images/instagram.png" style="height: 45px;"/></a>
+            <a href="https://www.youtube.com/channel/UCoSzZiWK2ts9ELgetLFq7Rw/videos?sort=dd&view=0&shelf_id=0" target="_blank"><img src="common/images/youtube.png" style="height: 45px;"/></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+  </div>
+
+
+<script>
+  var isIpad = ipadAdjustment(fixPMSection, removeSlideShow, scaleImages, insertLineBreaks, iPadPictureSubstitution);
+  var isMobile = mobileAdjustment(fixPMSection, removeSlideShow);
+  if (!isIpad && !isMobile){
+    var slideIndex = 0;
+    showSlides();
+  }
+  function removeSlideShow() {
+    $(".slideshow-container").html("");           // take out slide show for small screens
+    console.log("removed!")
+  }
+  function fixPMSection() {
+    var mentorImg = $("#pmgroup-img-block").html();
+    var mentorHtml = $("#mentor-section").html();
+    $("#mentor-section").html(mentorHtml.replace(mentorImg, ""));
+    $("#mentor-section").html("<div id='pmgroup-img-block'>" + mentorImg + "</div>" +  $("#mentor-section").html());
+    $("#pmgroup-img-block").css("float", "none");
+    $("#pmgroup-img-block").css("padding-bottom", "10px");
+    $("#pmgroup-img").css("display", "block");
+    $("#pmgroup-img").css("margin", "auto");
+      }
+  function insertLineBreaks() {
+    $( "<br><br><br><br>" ).insertAfter( "#last-row" );
+  }
+  function scaleImages() {
+    $("#ymca-img").css("height", "70px");
+    $("#hui-img").css("height", "120px");
+  }
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+  function iPadPictureSubstitution() {
+    $(".slideshow-container").html("<img src='images/slideshow/ipad_pic.jpg' />");
+  }
+</script>
+
+</body>

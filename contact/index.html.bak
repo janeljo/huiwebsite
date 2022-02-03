@@ -90,25 +90,13 @@
                 <div class="thumbnail">
 
                   <!-- image of staff -->
-                  <img src="images/Jordan-cut.png" style="width: 95%"/>
+                  <img src="images/Breanna-cut.png" style="width: 100%" />
 
                   <!-- caption -->
                   <div class="caption">
-                    <h2>Jordan Abanto</h2>
+                    <h2>Breanna Agas</h2>
                     <h4>2016 & Beyond</h4>
-                    <h4>abanto@hawaii.edu</h4>
-                  </div>
-                </div>
-              </div>
-
-              <!-- repeat -->
-              <div class="col-sm-6 col-md-3">
-                <div class="thumbnail">
-                  <img src="images/Emeri-cut.png" style="width: 100%" />
-                  <div class="caption">
-                    <h2>Emeri Joe Dingal</h2>
-                    <h4>2017 & Beyond</h4>
-                    <h4>ejdingal@hawaii.edu</h4>
+                    <h4>agasb@hawaii.edu</h4>
                   </div>
                 </div>
               </div>
@@ -164,7 +152,7 @@
 			  <!-- repeat -->
               <div class="col-sm-6 col-md-3">
                 <div class="thumbnail">
-                  <img src="images/TempProfile.jpg" style="width: 100%" />
+                  <img src="images/Elton-cut.png" style="width: 100%" />
                   <div class="caption">
                     <h2>Elton Khoang</h2>
                     <h4>2019 & Beyond</h4>
@@ -176,11 +164,23 @@
 			  <!-- repeat -->
               <div class="col-sm-6 col-md-3">
                 <div class="thumbnail">
-                  <img src="images/TempProfile.jpg" style="width: 100%" />
+                  <img src="images/Jasmine-cut.png" style="width: 100%" />
                   <div class="caption">
                     <h2>Jasmine Ko</h2>
                     <h4>2020 & Beyond</h4>
                     <h4>jqko@hawaii.edu</h4>
+                  </div>
+                </div>
+              </div>
+			  
+			  <!-- repeat -->
+              <div class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                  <img src="images/TempProfile.jpg" style="width: 100%" />
+                  <div class="caption">
+                    <h2>Amy Giang</h2>
+                    <h4>2020 & Beyond</h4>
+                    <h4>amyg8@hawaii.edu</h4>
                   </div>
                 </div>
               </div>
